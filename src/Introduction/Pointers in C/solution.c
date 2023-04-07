@@ -12,13 +12,13 @@ void update(int *a, int *b)
 
 int main()
 {
-    int a, b, *a_pointer = &a, *b_pointer = &b;
+  int a, b, *a_pointer = &a, *b_pointer = &b;
 
-    scanf("%d %d", &a, &b);
+  scanf("%d %d", &a, &b);
 
-    update(a_pointer, b_pointer);
+  update(a_pointer, b_pointer);
 
-    printf("%d\n%d", a, b);
+  printf("%d\n%d", a, b);
 
-    return 0;
+  return 0;
 }
