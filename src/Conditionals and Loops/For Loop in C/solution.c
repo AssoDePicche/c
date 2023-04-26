@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool is_even(const int number)
+bool is_even(const unsigned int number)
 {
   return number % 2 == 0;
 }
@@ -16,14 +16,21 @@ int main()
 
   for (int number = start; number <= end; number++)
   {
-    if (number < 10)
+    if (number > 0 && number < 10)
     {
       printf("%s\n", lookup_table[number - 1]);
 
       continue;
     }
 
-    printf(is_even(number) ? "even\n" : "odd\n");
+    if (is_even(number))
+    {
+      printf("even\n");
+    }
+    else
+    {
+      printf("odd\n");
+    }
   }
 
   return 0;
