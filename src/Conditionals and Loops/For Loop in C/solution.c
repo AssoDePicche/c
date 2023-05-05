@@ -1,36 +1,31 @@
 #include <stdio.h>
-#include <stdbool.h>
-
-bool is_even(const unsigned int number)
-{
-  return number % 2 == 0;
-}
 
 int main()
 {
   char *lookup_table[9] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-  int start, end;
+  const char *message;
+
+  int start, end, in_table, is_even;
 
   scanf("%d %d", &start, &end);
 
-  for (int number = start; number <= end; number++)
+  while (start++ <= end)
   {
-    if (number > 0 && number < 10)
+    in_table = (start > 0) && (start < 10);
+
+    if (in_table)
     {
-      printf("%s\n", lookup_table[number - 1]);
+      printf("%s\n", lookup_table[start - 1]);
 
       continue;
     }
 
-    if (is_even(number))
-    {
-      printf("even\n");
-    }
-    else
-    {
-      printf("odd\n");
-    }
+    is_even = (start % 2) == 0;
+
+    message = is_even ? "even" : "odd";
+
+    printf("%s\n", message);
   }
 
   return 0;
