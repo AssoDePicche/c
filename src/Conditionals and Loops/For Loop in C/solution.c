@@ -2,7 +2,7 @@
 
 int main()
 {
-  char *lookup_table[9] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+  char *table[9] = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
   const char *message;
 
@@ -16,7 +16,7 @@ int main()
 
     if (in_table)
     {
-      printf("%s\n", lookup_table[start - 1]);
+      printf("%s\n", table[start - 1]);
 
       continue;
     }
