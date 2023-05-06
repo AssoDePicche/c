@@ -1,11 +1,17 @@
 FILENAME       =
+SOURCE_FOLDER  =
+SOURCE_FILE    = $(SOURCE_FOLDER)$(FILENAME).c
+BUILD_FILE     = ./build/$(FILENAME)
 COMPILER       = gcc
-COMPILER_FLAGS = -Wall -o $(FILENAME).exe
+COMPILER_FLAGS = -Wall
 
-default: compile
+default: compile run
 
 compile:
-	$(COMPILER) $(FILENAME).c $(COMPILER_FLAGS)
+	$(COMPILER) $(COMPILER_FLAGS) $(SOURCE_FILE) -o $(BUILD_FILE)
 
 clean:
-	rm -f src/*/*/*.exe
+	rm -f ./build/*
+
+run:
+	$(BUILD_FILE)
