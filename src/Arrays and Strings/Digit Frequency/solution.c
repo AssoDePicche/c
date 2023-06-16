@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+typedef unsigned int uint;
+
 #define MAX_LEN 1000
 
 int main(void)
@@ -11,11 +13,13 @@ int main(void)
 
   scanf("%[^\n]%*c", string);
 
-  for (int digit = 0; digit < 10; ++digit)
-  {
-    int frequency = 0;
+  size_t length = strlen(string);
 
-    for (int character = 0; character < strlen(string); ++character)
+  for (uint digit = 0; digit < 10; ++digit)
+  {
+    uint frequency = 0;
+
+    for (uint character = 0; character < length; ++character)
     {
       if (string[character] == digits[digit])
       {
